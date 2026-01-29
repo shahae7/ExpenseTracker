@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans antialiased selection:bg-primary/30 selection:text-primary;
+    background-image: linear-gradient(rgba(15, 15, 17, 0.85), rgba(15, 15, 17, 0.95)), url('/app-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif tracking-wide;
+  }
+}
+
+/* Luxury Utilities */
+@layer utilities {
+  .glass {
+    @apply bg-[#0F0F11]/80 backdrop-blur-xl border border-white/5;
+  }
+
+  .glass-card {
+    @apply bg-surface/60 backdrop-blur-md border border-white/5 rounded-2xl shadow-2xl hover:border-primary/20 transition-all duration-300;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37];
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-accent text-black font-semibold shadow-lg shadow-primary/10 hover:shadow-primary/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300;
+  }
+
+  .input-container-luxury {
+    @apply flex items-center bg-surfaceHighlight/50 border border-white/5 rounded-xl transition-all duration-300 focus-within:border-primary/50 focus-within:bg-surfaceHighlight;
+  }
+
+  .input-naked {
+    @apply flex-1 bg-transparent outline-none px-4 py-3 text-white placeholder-text-muted;
+  }
+}
