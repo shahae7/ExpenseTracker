@@ -1,14 +1,11 @@
 {
     "name": "shahae-spend-fullstack",
     "version": "1.0.0",
-    "description": "Full-stack Expense Tracker with Cinematic UI",
-    "main": "backend/server.js",
+    "private": true,
     "scripts": {
-        "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-        "build": "cd frontend && npm install && npm run build",
-        "start": "cd backend && npm install && node server.js"
+        "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
+        "start": "node backend/server.js"
     },
-    "dependencies": {},
     "engines": {
         "node": ">=18.0.0"
     }
