@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: shahae-spend
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+    # Note: SQLite data will reset on every deploy in the free plan. 
+    # For persistent storage, a disk would be needed (paid on Render).
