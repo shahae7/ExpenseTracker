@@ -34,14 +34,13 @@ app.get('*', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
     // Test DB Connection
-    pool.query('SELECT 1', (err, res) => {
-        if (err) {
-            console.error('Database connection error:', err);
-        } else {
-            console.log('Database Connected to SQLite');
-        }
+    pool.query('SELECT 1').then(() => {
+        console.log('Database Connected to SQLite');
+    }).catch(err => {
+        console.error('Database connection error:', err);
+        process.exit(1); // Exit if DB fails
     });
 });
